@@ -1,2 +1,2 @@
-# scroll-to
-NPM Package : Scroll To Section
+# anchor-to
+NPM Package : Anchor To Section
