@@ -1,0 +1,33 @@
+{
+  "name": "@teamthunderfoot/scroll-to",
+  "version": "0.0.0",
+  "description": "Scroll To package",
+  "main": "main.js",
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-thunderfoot/scroll-to.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/team-thunderfoot/scroll-to/issues"
+  },
+  "homepage": "https://github.com/team-thunderfoot/scroll-to#readme",
+  "devDependencies": {
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.14.3"
+  },
+  "keywords": [
+    "back",
+    "to",
+    "top"
+  ]
+}
