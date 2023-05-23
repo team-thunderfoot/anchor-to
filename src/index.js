@@ -6,17 +6,11 @@ class Page {
     this.events();
   }
   init() {
-    const anchorButtons = document.querySelectorAll(".js--anchor-to");
-
-    anchorButtons.forEach((button) => {
-      const scrollTo = new ScrollTo({
-        anchorTo: document.getElementById(button.dataset.target),
-        offsetTop: 100,
-      });
-
-      button.addEventListener("click", (e) => {
-        scrollTo.anchorTo(e);
-      });
+    new ScrollTo({
+      checkUrl:false,
+      trigger:document.querySelectorAll(".js--anchor-to"),
+      anchorTo: document.getElementById(button.dataset.target),
+      offsetTop: 0,
     });
   }
 

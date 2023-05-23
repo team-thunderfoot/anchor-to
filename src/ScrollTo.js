@@ -2,16 +2,28 @@ class ScrollTo {
   constructor(payload) {
     this.DOM = {
       anchorTo: payload.anchorTo,
+      checkUrl : payload.checkUrl,
+      trigger : payload.trigger,
     };
     this.offsetTop = payload.offsetTop ? payload.offsetTop : 500;
-    this.scrollFromURL();
   }
-  init() {}
+  init() {
+    if(this.checkUrl){
+      this.scrollFromURL();
+    }
+    if(this.DOM.trigger){
+      trigger.forEach((button) => {
+        button.addEventListener("click", (e) => {
+          e.preventDefault();
+          this.anchorTo(e);
+        });
+      });
+    }
+  }
 
   events() {}
 
-  anchorTo(e) {
-    e.preventDefault();
+  anchorTo() {
     window.scrollTo({
       top: this.DOM.anchorTo.offsetTop - this.offsetTop,
       left: 0,
@@ -28,7 +40,7 @@ class ScrollTo {
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
-        this.anchorTo(new Event("click"));
+        this.anchorTo();
       }
     }
   }
