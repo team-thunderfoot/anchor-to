@@ -8,7 +8,7 @@ The `anchor-to` library provides functionality for smooth scrolling to anchor el
 ## Installation
 
 ```sh
-npm install anchor-to
+npm install @teamthunderfoot/anchor-to
 ```
 
 ## Usage
