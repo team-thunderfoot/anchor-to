@@ -17,18 +17,28 @@ npm install @teamthunderfoot/anchor-to
 ```sh
 import ScrollTo from 'scroll-to';
 
-const anchorButtons = document.querySelectorAll(".js--anchor-to");
+class Index {
+  constructor() {
+    this.init();
+  }
+  init() {
+    const anchorButtons = document.querySelectorAll(".js--anchor-to");
 
-anchorButtons.forEach((button) => {
-  const scrollTo = new ScrollTo({
-    anchorTo: document.getElementById(button.dataset.target),
-    offsetTop: 100,
-  });
+    anchorButtons.forEach((button) => {
+    const scrollTo = new ScrollTo({
+        anchorTo: document.getElementById(button.dataset.target),
+        offsetTop: 100,
+    });
 
-  button.addEventListener("click", (e) => {
-    scrollTo.anchorTo(e);
-  });
-});
+    button.addEventListener("click", (e) => {
+            scrollTo.anchorTo(e);
+        });
+    });
+  }
+}
+
+export default Index;
+new Index();
 ```
 
 In your HTML file, include elements with the class "js--anchor-to" and a data-target attribute specifying the ID of the anchor element.
