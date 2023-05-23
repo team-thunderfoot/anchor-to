@@ -4,7 +4,7 @@ class ScrollTo {
       anchorTo: payload.anchorTo,
     };
     this.offsetTop = payload.offsetTop ? payload.offsetTop : 500;
-    this.scrollToTargetFromURL();
+    this.scrollFromURL();
   }
   init() {}
 
@@ -19,7 +19,7 @@ class ScrollTo {
     });
   }
 
-  scrollToTargetFromURL() {
+  scrollFromURL() {
     const url = window.location.href;
     const hashIndex = url.indexOf("#");
 
