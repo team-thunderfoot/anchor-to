@@ -4,6 +4,7 @@ class ScrollTo {
       anchorTo: payload.anchorTo,
     };
     this.offsetTop = payload.offsetTop ? payload.offsetTop : 500;
+    this.scrollToTargetFromURL();
   }
   init() {}
 
@@ -16,6 +17,20 @@ class ScrollTo {
       left: 0,
       behavior: "smooth",
     });
+  }
+
+  scrollToTargetFromURL() {
+    const url = window.location.href;
+    const hashIndex = url.indexOf("#");
+
+    if (url.includes("#")) {
+      const targetId = url.slice(hashIndex + 1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        this.anchorTo(new Event("click"));
+      }
+    }
   }
 }
 
