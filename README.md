@@ -42,4 +42,5 @@ If the URL contains a hash value (e.g., https://example.com/#section2), the pack
 ## Options
 
 • `anchorTo:` DOM element to scroll smoothly to.
+
 • `offsetTop:` Additional vertical scroll offset.
