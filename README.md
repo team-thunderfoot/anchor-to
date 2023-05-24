@@ -40,7 +40,7 @@ In your HTML file, include elements with the class "js--anchor-to", a data-targe
 <a href="#" class="js--anchor-to" data-target="section1" tf-data-distance="50">Scroll to Section 1</a>
 ```
 
-#### Option 1: Scroll with Buttons
+#### Option 2: Scroll with URL
 
 If you want the package to scroll to a specific anchor element based on the URL, follow this approach:
 

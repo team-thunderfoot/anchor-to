@@ -1,8 +1,8 @@
 {
   "name": "@teamthunderfoot/anchor-to",
   "version": "0.0.0",
-  "description": "Scroll To package",
-  "main": "main.js",
+  "description": "Anchor To package",
+  "main": "",
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack"
