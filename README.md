@@ -1,9 +1,5 @@
 # Anchor-to
 
-NPM Package : Anchor To Section
-
-[![npm version](https://badge.fury.io/js/anchor-to.svg)](https://badge.fury.io/js/anchor-to)
-
 The Anchor-to package provides functionality for smooth scrolling to anchor elements on a web page, including scrolling to a target element specified in the URL.
 
 ## Installation
