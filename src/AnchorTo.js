@@ -55,4 +55,4 @@ class AnchorTo {
   }
 }
 
-export default ScrollTo;
+export default AnchorTo;
