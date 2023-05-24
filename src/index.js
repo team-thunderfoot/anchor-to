@@ -16,13 +16,13 @@ class Page {
     });
 
     // only URL
-    new ScrollTo({
-      trigger: false,
-      checkUrl: true,
-      anchorTo: false,
-      offsetTop: false,
-      offsetTopURL: 50,
-    });
+    // new ScrollTo({
+    //   trigger: false,
+    //   checkUrl: true,
+    //   anchorTo: false,
+    //   offsetTop: false,
+    //   offsetTopURL: 50,
+    // });
   }
 
   events() {}
