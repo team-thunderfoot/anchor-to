@@ -15,7 +15,7 @@ npm install @teamthunderfoot/anchor-to
 #### Option 1: Scroll with Buttons
 
 ```sh
-import AnchorTo from "./AnchorTo";
+import AnchorTo from "@teamthunderfoot/anchor-to"
 
 class Index {
   constructor() {
