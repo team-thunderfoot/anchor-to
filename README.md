@@ -26,7 +26,8 @@ class Index {
       trigger: "js--scroll-to",
       checkUrl: false,
       anchorTo: "tf-data-target",
-      offsetTop: "tf-data-distance",
+      offsetTopAttribute: "tf-data-distance",
+      offsetTop: 15,
       offsetTopURL: false,
     });
   }
@@ -36,11 +37,15 @@ export default Index;
 new Index();
 ```
 
-In your HTML file, include elements with the class "js--anchor-to", a data-target attribute specifying the ID of the anchor element and a tf-data-distance attribute to specify the offset distance.
+In your HTML file, include elements with the class "js--anchor-to" and a data-target attribute specifying the ID of the anchor element. Optionally, you can add the tf-data-distance attribute to set the offset-top from there. If the tf-data-distance attribute is not provided in the HTML element, the value of the offset-top will be taken from the offsetTop variable of the JS class, which can be dynamic and adjusted as needed.
 
 ```sh
 <a href="#" class="js--anchor-to" data-target="section1" tf-data-distance="50">Scroll to Section 1</a>
+
+<a href="#" class="js--anchor-to" data-target="section1">Scroll to Section 1</a>
 ```
+
+In the second example of the HTML, since it doesn't have the tf-data-distance attribute, it will take the value of the offset top as 15px, which is the value specified in the JS variable.
 
 #### Option 2: Scroll with URL
 
@@ -58,7 +63,8 @@ class Index {
       trigger: false,
       checkUrl: true,
       anchorTo: false,
-      offsetTop: false,
+      offsetTopAttribute: "tf-data-distance",
+      offsetTop: 15,
       offsetTopURL: 50,
     });
   }
@@ -86,7 +92,8 @@ class Index {
       trigger: "js--scroll-to",
       checkUrl: true,
       anchorTo: "tf-data-target",
-      offsetTop: "tf-data-distance",
+      offsetTopAttribute: "tf-data-distance",
+      offsetTop: 15,
       offsetTopURL: 100,
     });
   }
@@ -106,6 +113,8 @@ When initializing the AnchorTo class, you can provide several options to customi
 
 • `anchorTo:` This option specifies the attribute used to identify the target element to scroll to. It must be an id of the element.
 
-• `offsetTop:` This option allows you to specify an additional vertical scroll offset in pixels. It adjusts the final scroll position.
+• `offsetTopAttribute:` This option specifies the attribute used to determine the offset distance for scrolling. If the attribute is present in the HTML element, its value will be used as the offsetTop. If the attribute is not present, the offsetTop value will be taken from the offsetTop variable of the JS class.
+
+• `offsetTop:` This option allows you to specify an additional vertical scroll offset in pixels. It adjusts the final scroll position, but its value will be taken into account only if the tf-data-distance attribute is not present in the HTML element. If the tf-data-distance attribute is present, the value of the offsetTop option will be ignored and the offset will be determined by the attribute's value.
 
 • `offsetTopURL:` This option defines the vertical scroll offset applied when scrolling to an anchor element specified in the URL. It is useful when you want to add an additional offset.
