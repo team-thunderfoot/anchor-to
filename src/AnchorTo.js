@@ -28,7 +28,6 @@ class AnchorTo {
                     var offsetTopAttr = button.getAttribute(this.DOM.offsetTopAttribute)
                 }
 
-                console.log(offsetTopAttr)
                 var offsetTop = offsetTopAttr ?? this.DOM.offsetTop
 
                 // Add a click event listener to each trigger button
