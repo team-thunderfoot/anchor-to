@@ -23,13 +23,24 @@ class Index {
   }
   init() {
     new AnchorTo({
-      trigger: "js--scroll-to",
+      trigger: document.querySelector(".js--scroll-to"),
       checkUrl: false,
       anchorTo: "tf-data-target",
       offsetTopAttribute: "tf-data-distance",
       offsetTop: false,
       offsetTopURL: false,
     });
+
+    document.querySelectorAll(".js--scroll-to").forEach((trigger) => {
+        new AnchorTo({
+            trigger: trigger,
+            checkUrl: true, // or false
+            anchorTo: "tf-data-target",
+            offsetTopAttribute: "tf-data-distance",
+            offsetTop: 50,
+            offsetTopURL: 100,
+        })
+    })
   }
 }
 
@@ -47,7 +58,7 @@ If the `tf-data-distance` attribute is not provided in the HTML element, the val
 
 ```sh
   new AnchorTo({
-    trigger: "js--scroll-to",
+    trigger: document.querySelector(".js--scroll-to"),
     checkUrl: false,
     anchorTo: "tf-data-target",
     offsetTopAttribute: "tf-data-distance",
@@ -104,7 +115,7 @@ class Index {
   }
   init() {
     new AnchorTo({
-      trigger: "js--scroll-to",
+      trigger: document.querySelector(".js--scroll-to"),
       checkUrl: true,
       anchorTo: "tf-data-target",
       offsetTopAttribute: "tf-data-distance",
@@ -122,7 +133,7 @@ new Index();
 
 When initializing the AnchorTo class, you can provide several options to customize its behavior. Here's an explanation of each option:
 
-• `trigger:` This option specifies the class name of the buttons or elements that trigger the scroll action. For example, if you set `trigger: "js--scroll-to"`, it will target elements with the class "js--scroll-to" as the triggers for scrolling.
+• `trigger:` This option specifies the class name of the buttons or elements that trigger the scroll action.
 
 • `checkUrl:` This option determines whether the package should check the URL for a hash value and scroll to the corresponding element. If set to `true`, it will enable URL-based scrolling. If set to `false`, URL-based scrolling will be disabled.
 
