@@ -1,11 +1,11 @@
 class AnchorTo {
     constructor(payload) {
         this.DOM = {
-            trigger: payload.trigger, // Select the element with the specified class in payload.trigger
+            element: payload.element, // Select the element with the specified class in payload.trigger
         }
 
-        this.offsetTopAttr = this.DOM.trigger.getAttribute(payload.offsetTopAttribute);
-        this.targetId = this.DOM.trigger.getAttribute(payload.anchorTo) // Get the ID of the target element from the attribute specified in payload.anchorTo
+        this.offsetTopAttr = this.DOM.element.getAttribute(payload.offsetTopAttribute)
+        this.targetId = this.DOM.element.getAttribute(payload.anchorTo) // Get the ID of the target element from the attribute specified in payload.anchorTo
         this.checkUrl = payload.checkUrl // Indicates whether to check the URL for scrolling
         this.offsetTop = payload.offsetTop // Custom vertical offset without attribute
         this.offsetTopURL = payload.offsetTopURL // Custom vertical offset
@@ -19,12 +19,12 @@ class AnchorTo {
         }
 
         // Assigns click event to each trigger element
-        if (this.DOM.trigger) {
+        if (this.DOM.element) {
             const targetEl = document.getElementById(this.targetId) // Get the target element based on the obtained ID
             // Check if a custom offset is specified
             var offsetTop = this.offsetTopAttr ?? this.offsetTop
             // Add a click event listener to each trigger button
-            this.DOM.trigger.addEventListener("click", (e) => {
+            this.DOM.element.addEventListener("click", (e) => {
                 e.preventDefault()
                 this.scrollTo(targetEl.offsetTop, offsetTop) // Perform smooth scroll to the target element
             })

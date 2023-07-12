@@ -7,9 +7,9 @@ class Page {
     }
     init() {
         // only button / button + url
-        document.querySelectorAll(".js--scroll-to").forEach((trigger) => {
+        document.querySelectorAll(".js--scroll-to").forEach((element) => {
             new AnchorTo({
-                trigger: trigger,
+                element: element,
                 checkUrl: true, // or false
                 anchorTo: "tf-data-target",
                 offsetTopAttribute: "tf-data-distance",
@@ -20,7 +20,7 @@ class Page {
 
         // only URL
         // new ScrollTo({
-        //     trigger: false,
+        //     element: false,
         //     checkUrl: true,
         //     anchorTo: false,
         //     offsetTopAttribute: false,
