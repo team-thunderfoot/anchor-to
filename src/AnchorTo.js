@@ -24,14 +24,16 @@ class AnchorTo {
             // Check if a custom offset is specified
             var offsetTop = this.offsetTopAttr ?? this.offsetTop
             // Add a click event listener to each trigger button
-            this.DOM.element.addEventListener("click", (e) => {
-                e.preventDefault()
-                this.scrollTo(targetEl.offsetTop, offsetTop) // Perform smooth scroll to the target element
-            })
+            // Add a click event listener to each trigger button
+            this.clickHandler = (e) => {
+                e.preventDefault();
+                this.scrollTo(targetEl.offsetTop, offsetTop);
+            };
+            this.DOM.element.addEventListener("click", this.clickHandler);
         }
     }
 
-    events() {}
+    events() { }
 
     scrollTo(elementOffsetTop, offsetTop) {
         window.scrollTo({
@@ -50,6 +52,20 @@ class AnchorTo {
             const targetEl = document.getElementById(targetId) // Get the target element based on the obtained ID
             this.scrollTo(targetEl.offsetTop, this.offsetTopURL) // Perform smooth scroll to the target element from the URL
         }
+    }
+    destroy() {
+        // Remove the click event listener from the element
+        if (this.DOM.element) {
+            this.DOM.element.removeEventListener("click", this.clickHandler);
+        }
+
+        // Clear all references
+        this.DOM = null;
+        this.offsetTopAttr = null;
+        this.targetId = null;
+        this.checkUrl = null;
+        this.offsetTop = null;
+        this.offsetTopURL = null;
     }
 }
 
