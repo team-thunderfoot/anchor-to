@@ -144,3 +144,23 @@ When initializing the AnchorTo class, you can provide several options to customi
 • `offsetTop:` This option allows you to specify an additional vertical scroll offset in pixels. It adjusts the final scroll position, but its value will be taken into account only if the `tf-data-distance` attribute is not present in the HTML element. If the `tf-data-distance` attribute is present, the value of the `offsetTop` option will be ignored and the offset will be determined by the attribute's value.
 
 • `offsetTopURL:` This option defines the vertical scroll offset applied when scrolling to an anchor element specified in the URL. It is useful when you want to add an additional offset.
+
+## Destroy
+
+To ensure that the AnchorTo instance does not retain any references and to remove event listeners when they are no longer needed, you should call the destroy method.
+```sh
+// Create a new AnchorTo instance
+const anchor = new AnchorTo({
+  element: document.querySelector('.scroll-trigger'),
+  offsetTopAttribute: 'data-offset-top',
+  anchorTo: 'data-target-id',
+  checkUrl: true,
+  offsetTop: 50,
+  offsetTopURL: 100
+});
+
+// Later, when you need to clean up (e.g., when navigating away from the page or destroying components)
+anchor.destroy();
+
+```
+By calling anchor.destroy(), you ensure that the event listener on the .scroll-trigger element is removed and all internal references are cleared, thus preventing potential memory leaks.
