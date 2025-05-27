@@ -51,7 +51,7 @@ new Index();
 In your HTML file, include elements with the class `js--anchor-to` and a `data-target` attribute specifying the ID of the anchor element. Optionally, you can add the `tf-data-distance` attribute to set the offset-top from there.
 
 ```sh
-<a href="#" class="js--anchor-to" data-target="section1" tf-data-distance="50">Scroll to Section 1</a>
+<button class="js--anchor-to" data-target="section1" tf-data-distance="50">Scroll to Section 1</button>
 ```
 
 If the `tf-data-distance` attribute is not provided in the HTML element, the value of the offset-top will be taken from the `offsetTop` variable of the JS class, which can be dynamic and adjusted as needed.
@@ -68,7 +68,7 @@ If the `tf-data-distance` attribute is not provided in the HTML element, the val
 ```
 
 ```sh
-<a href="#" class="js--anchor-to" data-target="section1">Scroll to Section 1</a>
+<button class="js--anchor-to" data-target="section1">Scroll to Section 1</button>
 ```
 
 In this example of the HTML, since it doesn't have the `tf-data-distance` attribute, it will take the value of the offset top as 15px, which is the value specified in the JS variable.
